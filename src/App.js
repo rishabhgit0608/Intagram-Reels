@@ -39,5 +39,4 @@ function PrivateRoute(props) {
     <Redirect to="/login"></Redirect>
   );
 }
-
 export default App;

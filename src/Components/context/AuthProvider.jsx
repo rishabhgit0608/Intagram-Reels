@@ -10,13 +10,11 @@ export function AuthProvider({ children }) {
     return firebaseAuth.signInWithEmailAndPassword(email, password);
   }
   function signOut() {
-    firebaseAuth.signout();
+    return firebaseAuth.signOut();
   }
-  function signUp() {}
-  // love the song
-  //   useEffect(){
-
-  //   }
+  function signUp(email, password) {
+    return firebaseAuth.createUserWithEmailAndPassword(email, password);
+  }
 
   let value = {
     currentUser: currentUser,
