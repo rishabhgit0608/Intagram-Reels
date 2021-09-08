@@ -12,6 +12,17 @@ import Profile from "./Components/Profile";
 import Signup from "./Components/SignUp";
 import { AuthContext, AuthProvider } from "./Components/context/AuthProvider";
 
+function PrivateRoute(props) {
+  let { comp: Component, path } = props;
+  let { currentUser } = useContext(AuthContext);
+  return currentUser ? (
+    <Route path={path} component={Component}></Route>
+  ) : (
+    <Redirect to="/login"></Redirect>
+  );
+}
+
+
 function App() {
   return (
     <AuthProvider>
@@ -30,13 +41,4 @@ function App() {
   );
 }
 
-function PrivateRoute(props) {
-  let { comp: Component, path } = props;
-  let { currentUser } = useContext(AuthContext);
-  return currentUser ? (
-    <Route path={path} component={Component}></Route>
-  ) : (
-    <Redirect to="/login"></Redirect>
-  );
-}
 export default App;
