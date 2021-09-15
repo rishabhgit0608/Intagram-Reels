@@ -1,15 +1,22 @@
 import firebase from "firebase/compat";
-let firebaseConfig = {
- apiKey: "AIzaSyB7HDnXpuqyUcosoRk6w4BNGrHTAFvUgUI",
- authDomain: "login-auth-e9a63.firebaseapp.com",
- projectId: "login-auth-e9a63",
- storageBucket: "login-auth-e9a63.appspot.com",
- messagingSenderId: "661837767573",
- appId: "1:661837767573:web:c9e71c25ea1fc0a87b8c9c",
-};
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBo3a-5j5aqnxJAPm8dTsAsxnsGjkI1jUA",
+  authDomain: "new-login-project-5f0ab.firebaseapp.com",
+  projectId: "new-login-project-5f0ab",
+  storageBucket: "new-login-project-5f0ab.appspot.com",
+  messagingSenderId: "855762419464",
+  appId: "1:855762419464:web:9279136a05677867d636bd",
+  measurementId: "G-686Y7C6YK1",
+};
 let firebaseApp = firebase.initializeApp(firebaseConfig);
 
 let firebaseAuth = firebaseApp.auth();
 
 export default firebaseAuth;
+
+export let firebaseStorage = firebaseApp.storage();
+
+export let firebaseDB = firebaseApp.firestore();
+
+export let timeStamp = firebase.firestore.FieldValue.serverTimestamp;

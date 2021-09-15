@@ -21,8 +21,7 @@ function PrivateRoute(props) {
     <Redirect to="/login"></Redirect>
   );
 }
-
-
+console.log("a");
 function App() {
   return (
     <AuthProvider>
